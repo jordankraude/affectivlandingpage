@@ -5,31 +5,24 @@
   --primary: 256 97% 71%;
   --destructive: 349 100% 64%;
   --warning: 34 100% 50%;
-
-  /* These two are no longer used for body background */
   --background: 0 0% 100%;
   --foreground: 0 0% 0%;
-
-  /* iPhone safe areas */
   --safe-area-inset-top: env(safe-area-inset-top);
   --safe-area-inset-bottom: env(safe-area-inset-bottom);
+
 }
 
-/* iOS Safari Dynamic Island + rounded corner background fix */
-html,
 body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+}
 
-  /* This is the key: match your hero gradient */
-  background: linear-gradient(
-    to bottom right,
-    hsl(var(--primary)) 70%,
-    hsl(var(--destructive)) 60%,
-    hsl(var(--warning)) 50%
-  );
-
-  color: hsl(var(--foreground));
-  font-family: 'Poppins', sans-serif;
+html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
