@@ -14,28 +14,38 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Affectiv Overview",
-  description: "An overview of the affectiv app and form to stay in the loop for affectiv updates",
+  description:
+    "An overview of the Affectiv app and form to stay in the loop for Affectiv updates",
+
+  // Adaptive theme colors for iOS Safari + modern browsers
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-    { media: "(prefers-color-scheme: light)", color: "hsl(var(--primary))" },
-    { media: "(prefers-color-scheme: dark)", color: "hsl(var(--primary))" },
+    {
+      media: "(prefers-color-scheme: light)",
+      color: "hsl(var(--primary))",
+    },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: "hsl(var(--primary))",
+    },
   ],
+
+  // iOS Safari Dynamic Island / status bar styling
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        
-      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
